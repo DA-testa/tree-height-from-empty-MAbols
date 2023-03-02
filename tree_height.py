@@ -12,23 +12,28 @@ def compute_height(n, parents):
         x[i]=int(x[i])
     print(x)
     max_height = 0
+    max_height_check=0
     # Your code here
     root_num=0
     for i in range(len(x)):
         if x[i]==-1:
             root_num=i
             break
-    for i in range(n):
-        for j in range(n):
+    for i in range(len(x)):
+        for j in range(len(x)):
             if i==root_num:
+                
                 break
             else:
                 max_height+=1
                 i=x[i]
                 continue
+        if max_height_check<max_height:
+            max_height_check=max_height
+        max_height=0
 
         
-    print(max_height)
+    print(max_height_check+1)
 
     return max_height
 
@@ -63,7 +68,7 @@ def main():
 
             
 
-        
+        pass
     
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
