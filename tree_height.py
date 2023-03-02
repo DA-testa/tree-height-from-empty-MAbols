@@ -48,7 +48,7 @@ def main():
         parents=list(parents)
         compute_height(int(n),parents)
     elif "F"in text:
-        path_sakums=".github/test/"
+        path_sakums="./test/"
         faila_nosaukums=input()
         if "a" or"A" in faila_nosaukums:
             print("error")
