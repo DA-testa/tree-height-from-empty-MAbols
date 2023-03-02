@@ -50,7 +50,7 @@ def main():
     elif "F"in text:
         path_sakums="./test/"
         faila_nosaukums=input()
-        if "a" or"A" in faila_nosaukums:
+        if "a" in faila_nosaukums:
             print("error")
             
         else:
