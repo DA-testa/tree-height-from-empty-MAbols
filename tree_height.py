@@ -7,10 +7,8 @@ import numpy as np
 def compute_height(n, parents):
     # Write this function
     
-    x=parents
-    for i in range(len(x)):
-        x[i]=int(x[i])
-    print(x)
+    x=np.array(parents)
+    
     max_height = 0
     max_height_check=0
     # Your code here
@@ -33,9 +31,9 @@ def compute_height(n, parents):
         max_height=0
 
         
-    print(max_height_check+1)
+    
 
-    return max_height
+    return max_height_check+1
 
 
 def main():
@@ -48,21 +46,21 @@ def main():
         parents=list(parents)
         compute_height(int(n),parents)
     elif "F"in text:
-        path_sakums="./test/"
+        
         faila_nosaukums=input()
         if "a" in faila_nosaukums:
             print("error")
             
         else:
-            pilnais_path=path_sakums+faila_nosaukums
-            fails=open(pilnais_path)
+            
+            fails=open("./test/"+faila_nosaukums)
             n=fails.readline()
             n=int(n)
             parents=fails.readline()
             parents=parents.split(" ")
             parents=map(int,parents)
             parents=list(parents)
-            compute_height(n,parents)
+            print(compute_height(n,parents))
             fails.close()
 
 
