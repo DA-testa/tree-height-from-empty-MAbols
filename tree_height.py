@@ -12,28 +12,20 @@ def compute_height(n, parents):
     max_height = 0
     max_height_check=0
     node_mh={}
-    key_check_boolean=False
     # Your code here
-    root_num=0
+  
     for i in range(n):
-        if x[i]==-1:
-            root_num=i
-            break
-    for i in range(n):
-        for j in range(n):
-            if i==root_num:
+        while True:
+            if x[i]==-1:
                 
                 break
             else:
                 max_height+=1
                 node_mh[x[i]]=max_height
-                key_check=node_mh.keys()
-                if x[i] in key_check:
-                    max_height=max_height+node_mh.get(x[i])
-                #pievienot x[i] ka key un max height ka value un pec tam jataisa if parbaude un japieskaita max height ja pie sada elementa jau ir bijis
-                
                 i=x[i]
-                continue
+                
+                 #pievienot x[i] ka key un max height ka value un pec tam jataisa if parbaude un japieskaita max height ja pie sada elementa jau ir bijis
+
         if max_height_check<max_height:
             max_height_check=max_height
         max_height=0
@@ -74,7 +66,7 @@ def main():
 
             
 
-        pass
+        
     
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
