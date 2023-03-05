@@ -13,22 +13,32 @@ def compute_height(n, parents):
     max_height_check=0
     node_mh={}
     # Your code here
+    j=0
   
     for i in range(n):
         while True:
             if x[i]==-1:
-                
+                #max_height=0
                 break
             else:
                 max_height+=1
-                node_mh[x[i]]=max_height
-                i=x[i]
-                if x[i] in node_mh.keys():
-                    max_height=max_height+node_mh.get(x[i])
+                #node_mh[x[i]]=max_height
+                #j=i
+                #i=x[i]
+                #node_mh[x[i]]=max_height
+                if i in node_mh.keys():
+                    #update
+                    
+                    max_height=max_height+node_mh.get(i)
+                    node_mh[j]=max_height
                     break
-                
-                 #pievienot x[i] ka key un max height ka value un pec tam jataisa if parbaude un japieskaita max height ja pie sada elementa jau ir bijis
+                else:
+                    node_mh[j]=max_height
 
+                 #pievienot x[i] ka key un max height ka value un pec tam jataisa if parbaude un japieskaita max height ja pie sada elementa jau ir bijis
+                j=i
+                i=x[i]
+                
         if max_height_check<max_height:
             max_height_check=max_height
         max_height=0
