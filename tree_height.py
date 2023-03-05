@@ -16,28 +16,32 @@ def compute_height(n, parents):
     j=0
   
     for i in range(n):
+        j=i
         while True:
             if x[i]==-1:
                 #max_height=0
+                j=i
                 break
             else:
                 max_height+=1
                 #node_mh[x[i]]=max_height
                 #j=i
-                #i=x[i]
+                i=x[i]
                 #node_mh[x[i]]=max_height
                 if i in node_mh.keys():
                     #update
                     
                     max_height=max_height+node_mh.get(i)
                     node_mh[j]=max_height
+                    j=i
                     break
                 else:
                     node_mh[j]=max_height
 
                  #pievienot x[i] ka key un max height ka value un pec tam jataisa if parbaude un japieskaita max height ja pie sada elementa jau ir bijis
-                j=i
-                i=x[i]
+                #j=i
+                #i=x[i]
+                
                 
         if max_height_check<max_height:
             max_height_check=max_height
@@ -46,7 +50,7 @@ def compute_height(n, parents):
         
     
 
-    return max_height_check
+    return max_height_check+1
 
 
 def main():
